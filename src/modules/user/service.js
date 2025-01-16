@@ -8,3 +8,16 @@ export const getUsers = async (req, res) => {
         return error;
     }
 }
+
+export const getUser = async (req, res) => {
+    try {
+        const user = await User.findAll({
+            where: {
+                id: req.params.id
+            }
+        });
+        return user;
+    } catch (error) {
+        return error;
+    }
+}
